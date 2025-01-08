@@ -12,3 +12,32 @@ std::string str2 = "hello world";  // 使用 C++ 中的 std::string 类型
 char strs[3][10] = { "hello", "world", "abc" };
 // 或者指针数组
 char *strs[3] = { "hello", "world", "abc" };
+在c++里面，使用 std::vector 来表示动态大小的二维字符数组，或者使用 std::array 来表示固定大小的二维数组
+  std::vector<std::string> strs = { "hello", "world", "abc" };
+
+#include <stdio.h>
+
+int main() {
+    char str[] = "hello world";
+    printf("%s\n", str);  // 输出: hello world
+    
+    char strs[3][10] = { "hello", "world", "abc" };
+    printf("%s\n", strs[1]);  // 输出: world
+    
+    return 0;
+}
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+int main() {
+    std::string str = "hello world";
+    std::cout << str << std::endl;  // 输出: hello world
+
+    std::vector<std::string> strs = { "hello", "world", "abc" };
+    std::cout << strs[1] << std::endl;  // 输出: world
+    
+    return 0;
+}
+
