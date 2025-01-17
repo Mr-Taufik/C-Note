@@ -74,3 +74,51 @@ int main() {
 
     return 0;
 }
+
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+     double a;
+     double b;
+     double c;
+
+     std::cout << "Enter side A:";
+     std::cin >> a;
+     std::cout << "Enter size b:";
+     std::cin >> b;
+
+    // a = pow(a, 2);
+     //b = pow(b, 2);
+     //c = sqrt(a + b);
+
+     c = sqrt(pow(a, 2) + pow(b, 2));
+
+     std::cout << "Side C:" << c;
+
+     return 0;
+}
+在c++里面sqrt会自动转型
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int num = 16;
+    double result = sqrt(num);  // 自动将 int 转换为 double
+    std::cout << result << std::endl;  // 输出 4
+    return 0;
+}
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int base = 2;
+    int exponent = 3;
+    double result = pow(base, exponent);  // 自动将 int 转换为 double
+    std::cout << result << std::endl;  // 输出 8
+    return 0;
+}
+
+
+     
