@@ -67,3 +67,53 @@ int main()
 
      return 0;
 }
+
+
+
+#include <iostream>
+#include <list>
+using namespace std;
+
+class Student
+{
+   public:
+     string Name;
+     string Sex;
+     int Age;
+     list<string> Subject;
+     Student(string name, string sex, int age)
+     {
+          Name = name;
+          Sex = sex;
+          Age = age;
+     }
+
+     void prin()
+     {
+          cout << "Name is " << Name << endl;
+          cout << "Sex is " << Sex << endl;
+          cout << "Age is " << Age << endl;
+     }
+
+};
+int main()
+{
+     Student student1("taozk", "boy", 19);
+     student1.Subject.push_back("math");
+     student1.Subject.push_back("English");
+
+     student1.prin();
+     for(string subject : student1.Subject)
+     {
+          cout << subject << endl;
+
+     }
+
+
+
+     return 0;
+}
+
+
+
+
