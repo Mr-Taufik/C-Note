@@ -125,9 +125,36 @@ int main()
 
 
 这里面就是创建一个类的指针，可以创建基类的也可以创建子类的指针，创建完成后赋予地址，然后就可以通过指针去调用类内部的函数了
+基类指针可以指向派生类的对象，但它只能访问基类中的成员（如果没有虚函数或重写的话），它不能用于“重新”调用构造函数。
 
+#include <iostream>
+using namespace std;
 
+class Base {
+public:
+    Base() {
+        cout << "Base class constructor" << endl;
+    }
+};
 
+class Derived : public Base {
+public:
+    Derived() {
+        cout << "Derived class constructor" << endl;
+    }
+};
 
+int main() {
+    Base* basePtr = new Derived();  // 基类指针指向派生类对象
+
+    // 基类指针并不能直接调用基类的构造函数
+    // 它已经在对象创建时自动调用了基类的构造函数
+
+    delete basePtr;  // 释放内存
+    return 0;
+}
+
+在 main 函数中，基类指针 basePtr 被用来指向派生类对象 Derived。在创建 Derived 对象时，基类的构造函数被自动调用，然后是派生类的构造函数。
+基类指针 basePtr 不能单独调用基类的构造函数，它只能指向已经存在的对象。构造函数是在对象创建时自动调用的，而不是通过指针显式调用。
 
 
